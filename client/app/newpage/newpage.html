@@ -1,7 +1,14 @@
-<div class="col-md-4">
+<!-- <div class="col-md-4">
 This is the newpage view.
 <canvas id="mybar" class="chart chart-bar"
   chart-data="data" chart-labels="labels">
 </canvas>
 </div>
+ -->
 
+<div class="col-md-4" ng-repeat="whatsit in awesomeWhatsit">
+      <h1 class="page-header">Chart name: {{whatsit.name}}</h1>
+      <canvas id={{whatsit._id}} class="chart chart-bar"
+  chart-data="data" chart-labels="labels">
+</canvas>
+    </div>

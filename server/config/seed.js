@@ -7,10 +7,11 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var Whatsit = require('../api/whatsit/whatsit.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
-    name : 'Development Tools',
+    name : 'Development Tools Alter',
     info : 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Stylus, Sass, CoffeeScript, and Less.'
   }, {
     name : 'Server and Client integration',
@@ -28,6 +29,17 @@ Thing.find({}).remove(function() {
     name : 'Deployment Ready',
     info : 'Easily deploy your app to Heroku or Openshift with the heroku and openshift subgenerators'
   });
+});
+
+Whatsit.find({}).remove(function() {
+  Whatsit.create({
+    name : 'Favorite Fruit',
+    labels : ['Banana', 'Apple', 'Orange'],
+    data: [[1,2,5]]
+  },
+  function() {
+      console.log('finished adding graph data');
+    });
 });
 
 User.find({}).remove(function() {
