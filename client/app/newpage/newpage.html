@@ -1,14 +1,8 @@
-<!-- <div class="col-md-4">
-This is the newpage view.
-<canvas id="mybar" class="chart chart-bar"
-  chart-data="data" chart-labels="labels">
-</canvas>
-</div>
- -->
-
-<div class="col-md-4" ng-repeat="whatsit in awesomeWhatsit">
-      <h1 class="page-header">Chart name: {{whatsit.name}}</h1>
-      <canvas id={{whatsit._id}} class="chart chart-bar"
-  chart-data="data" chart-labels="labels">
-</canvas>
+    <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Available Charts</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="whatsit in awesomeWhatsit">
+        <li><a href="/newpage/{{whatsit._id}}">{{whatsit.name}}</a></li>
+      </ul>
     </div>
+  </div>

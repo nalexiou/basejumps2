@@ -37,6 +37,19 @@ Whatsit.find({}).remove(function() {
     labels : ['Banana', 'Apple', 'Orange'],
     data: [[1,2,5]]
   },
+
+  {
+    name : 'Favorite Drink',
+    labels : ['Pepsi', 'Coke', 'Sprite', 'Fanta'],
+    data: [[1,2,4,2]]
+  },
+
+    {
+    name : 'Favorite Animal',
+    labels : ['Tiger', 'Elephant', 'Bear', 'Lion'],
+    data: [[1,8,4,2]]
+  },
+
   function() {
       console.log('finished adding graph data');
     });

@@ -6,5 +6,9 @@ angular.module('basejumps2App')
       .when('/newpage', {
         templateUrl: 'app/newpage/newpage.html',
         controller: 'NewpageCtrl'
+      })
+      .when('/newpage/:id', {
+        templateUrl: 'app/newpage/chart.html',
+        controller: 'ChartCtrl'
       });
   });
