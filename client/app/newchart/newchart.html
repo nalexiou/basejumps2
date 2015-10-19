@@ -1,0 +1,27 @@
+
+<div class="container">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+      <h1 class="page-header">Create a new chart:</h1>
+<p class="input-group">
+      <label>Enter a name:</label>
+    <div>
+  	<input type="text" class="form-control" placeholder="Enter chart name" ng-model="name">
+  </div>
+</p>
+<p class="input-group">
+      <label>Enter options:</label>
+    <div ng-repeat="someString in labels track by $index">
+  	<input type="text" class="form-control input" placeholder="Enter new label name" ng-model="labels[$index]">
+  </div>
+</p>
+
+<p class="input-group center-block">
+  <button type="submit" class="btn btn-primary center-block" ng-click="addLabel()">More Options</button>
+  <button type="submit" class="btn btn-primary center-block" ng-click="displayLabels()">DisplayLabels</button>
+</p>
+
+</div>
+<div class="col-md-4"></div>
+</div>
+
