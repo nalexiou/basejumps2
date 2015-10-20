@@ -10,4 +10,7 @@ angular.module('basejumps2App')
     $scope.addLabel = function(){
     	$scope.labels.push("");
     }
+    $scope.deleteLabel = function(index){
+    	$scope.labels.splice(index,1);
+    }
   });
