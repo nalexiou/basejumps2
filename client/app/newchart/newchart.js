@@ -6,5 +6,9 @@ angular.module('basejumps2App')
       .when('/newchart', {
         templateUrl: 'app/newchart/newchart.html',
         controller: 'NewchartCtrl'
+      })
+      .when('/newchart/:id', {
+        templateUrl: 'app/newchart/vote.html',
+        controller: 'VoteCtrl'
       });
   });
