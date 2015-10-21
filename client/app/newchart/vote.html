@@ -1,0 +1,11 @@
+
+<h1 class="page-header">Chart: {{awesomeChart.name}}</h1>
+<div role="group" class="container" ng-repeat="item in awesomeChart.labels track by $index">
+	<div class="radio">
+	  <label><input ng-model="vote.selection" type="radio" ng-value="$index">{{item}}</label>
+	</div>
+</div>
+<button type="submit" class="btn btn-primary center-block" ng-click="addVote()">Vote</button>
+
+<tt>awesomeChart = {{awesomeChart | json}}</tt><br/>
+<tt>vote = {{vote.selection | json}}</tt><br/>
