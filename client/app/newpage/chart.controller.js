@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('basejumps2App')
   .controller('ChartCtrl', function ($scope, $http, socket, $routeParams) {
   	$scope.awesomeWhatsit = [];
@@ -6,7 +8,11 @@ angular.module('basejumps2App')
       $scope.awesomeWhatsit = awesomeWhatsit;
       $scope.labels = awesomeWhatsit.labels;
       $scope.data = awesomeWhatsit.data;
-      socket.syncUpdates('whatsit', $scope.awesomeWhatsit);
+      // socket.syncUpdates('whatsit', awesomeWhatsit);
+      $scope.$watch('awesomeWhatsit', function(){
+        $scope.labels = awesomeWhatsit.labels;
+        $scope.data = awesomeWhatsit.data;
+      })
     });
 
   });

@@ -9,6 +9,8 @@ angular.module('basejumps2App')
       // $scope.data = awesomeWhatsit[0].data;
       socket.syncUpdates('whatsit', $scope.awesomeWhatsit);
     });
-
+    $scope.deleteChart = function(whatsit) {
+      $http.delete('/api/whatsits/' + whatsit._id);
+    };
   
   });

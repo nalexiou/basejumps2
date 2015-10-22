@@ -1,6 +1,18 @@
+<div class="container">
+<div class="row">
+<div class="col-md-4"></div>
 <div class="col-md-4">
       <h1 class="page-header">Chart name: {{awesomeWhatsit.name}}</h1>
       <canvas id={{awesomeWhatsit._id}} class="chart chart-bar"
   chart-data="data" chart-labels="labels">
 </canvas>
+</div>
+<div class="col-md-4"></div>
+</div>
+<br>
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-4"><p>awesomeWhatsit = {{awesomeWhatsit | json}}</p></div>
+<div class="col-md-4"></div>
+</div>
 </div>

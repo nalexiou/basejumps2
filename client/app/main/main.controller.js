@@ -21,6 +21,11 @@ angular.module('basejumps2App')
       $http.delete('/api/things/' + thing._id);
     };
 
+    $scope.editThing = function() {
+      $http.put('/api/things/' + $scope.myID, {name: $scope.myText});
+    };
+
+
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
