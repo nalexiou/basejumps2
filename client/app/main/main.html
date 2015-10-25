@@ -4,6 +4,7 @@
   <div class="container">
     <h1>'Allo, 'Allo!</h1>
     <p class="lead">Kick-start your next web app with Angular Fullstack</p>
+    <p class="lead">Current user: {{getCurrentUser}}</p>
     <img src="assets/images/yeoman.png" alt="I'm Yeoman">
   </div>
 </header>
@@ -27,15 +28,14 @@
   <form class="thing-form">
     <label>Syncs in realtime across clients</label>
     <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
+      <input type="text" class="form-control input" placeholder="Add a new thing here." ng-model="newThing">
       <span class="input-group-btn">
         <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
       </span>
     </p>
     <label>Edit item</label>
     <p class="input-group">
-      <input type="text" class="form-control" placeholder="Enter ID here." ng-model="myID">
-      <input type="text" class="form-control" placeholder="Enter text to change here" ng-model="myText">
+      <input type="text" class="form-control input" placeholder="Enter text to change here" ng-model="myText">
       <span class="input-group-btn">
         <button type="submit" class="btn btn-primary" ng-click="editThing()">Edit text</button>
       </span>
@@ -44,7 +44,7 @@
     <form class="whatsit-form">
     <label>Add item to graph</label>
     <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new item to graph here." ng-model="newWhatsit">
+      <input type="text" class="form-control input" placeholder="Add a new item to graph here." ng-model="newWhatsit">
       <span class="input-group-btn">
         <button type="submit" class="btn btn-primary" ng-click="addWhatsit()">Add New</button>
       </span>

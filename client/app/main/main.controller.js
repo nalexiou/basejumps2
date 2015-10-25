@@ -1,13 +1,20 @@
 'use strict';
 
 angular.module('basejumps2App')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', function ($scope, $http, socket, Auth) {
     $scope.awesomeThings = [];
+    $scope.isLoggedInAsync = Auth.isLoggedInAsync;
+    
 
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
       socket.syncUpdates('thing', $scope.awesomeThings);
     });
+
+    $scope.isLoggedInAsync(function(bool) {
+    if (bool) { $scope.getCurrentUser = Auth.getCurrentUser().name;} 
+    else { $scope.getCurrentUser = "User not logged in"; }
+});
 
     $scope.addThing = function() {
       if($scope.newThing === '') {
