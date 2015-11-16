@@ -4,6 +4,7 @@ angular.module('basejumps2App')
   .controller('MainCtrl', function ($scope, $http, socket, Auth) {
     $scope.awesomeThings = [];
     $scope.isLoggedInAsync = Auth.isLoggedInAsync;
+    $scope.isLoggedIn = Auth.isLoggedIn;
     
 
     $http.get('/api/things').success(function(awesomeThings) {

@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var WhatsitSchema = new Schema({
+  user: String,
   name: String,
   labels: [String],
   data: []

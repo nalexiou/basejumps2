@@ -33,18 +33,21 @@ Thing.find({}).remove(function() {
 
 Whatsit.find({}).remove(function() {
   Whatsit.create({
+    user: 'test@test.com',
     name : 'Favorite Fruit',
     labels : ['Banana', 'Apple', 'Orange'],
     data: [[1,2,5]]
   },
 
   {
+    user: 'test@test.com',
     name : 'Favorite Drink',
     labels : ['Pepsi', 'Coke', 'Sprite', 'Fanta'],
     data: [[1,2,4,2]]
   },
 
     {
+    user: 'test@test.com',
     name : 'Favorite Animal',
     labels : ['Tiger', 'Elephant', 'Bear', 'Lion'],
     data: [[1,8,4,2]]
