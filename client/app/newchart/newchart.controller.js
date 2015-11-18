@@ -1,9 +1,11 @@
 'use strict';
 
 angular.module('basejumps2App')
-  .controller('NewchartCtrl', function ($scope, $http, $location) {
+  .controller('NewchartCtrl', function ($scope, $http, $location, Auth) {
   	$scope.name = '';	
   	$scope.labels = new Array(3);
+    $scope.getCurrentUser = Auth.getCurrentUser;
+    $scope.isLoggedIn = Auth.isLoggedIn;
     var data = [[0,0,0]];
 
   	$scope.displayLabels = function() {
@@ -19,11 +21,11 @@ angular.module('basejumps2App')
     }
 
     $scope.createChart = function() {
-      if($scope.name === '' || $scope.labels.filter(function(value){ value === ''}).length>0) {
+      if($scope.name === '' || $scope.labels.filter(function(value){ value === ''}).length>0 || !Auth.isLoggedIn()) {
         return;
       }
 
-      $http.post('/api/whatsits', { name: $scope.name, labels: $scope.labels, data: data })
+      $http.post('/api/whatsits', { user: Auth.getCurrentUser().email, name: $scope.name, labels: $scope.labels, data: data })
       .success(function(chart){
       	$location.path('/newchart/'+chart._id);
       });

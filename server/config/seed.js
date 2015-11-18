@@ -47,7 +47,7 @@ Whatsit.find({}).remove(function() {
   },
 
     {
-    user: 'test@test.com',
+    user: 'admin@test.com',
     name : 'Favorite Animal',
     labels : ['Tiger', 'Elephant', 'Bear', 'Lion'],
     data: [[1,8,4,2]]
