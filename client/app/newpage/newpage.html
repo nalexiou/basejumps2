@@ -1,9 +1,11 @@
+
     <div ng-include="'components/navbar/navbar.html'"></div>
+  <div ng-show = "isLoggedIn()">
     <div class="row">
     	<div class="col-md-2"></div>
     <div class="col-md-8">
       <h1 class="page-header">Available Charts</h1>
-      <ul class="col-md-4 col-lg-4 col-sm-6 list-group" ng-repeat="whatsit in awesomeWhatsit">
+      <ul class="col-md-4 col-lg-4 col-sm-6 list-group" ng-repeat="whatsit in awesomeWhatsit | filter:{user: getCurrentUser().email}">
         <li class="list-group-item"><a href="/newpage/{{whatsit._id}}">{{whatsit.name}} - User: {{whatsit.user}} </a>
 		<span class="pull-right">
         	<button type="button" class="close" ng-click="deleteChart(whatsit)">&times;</button>
@@ -13,5 +15,18 @@
     </div>
     <div class="col-md-2"></div>
   </div>
-
+</div>
+  <div ng-hide = "isLoggedIn()">
+    <div class="row">
+      <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1 class="page-header">Available Charts</h1>
+      <ul class="col-md-4 col-lg-4 col-sm-6 list-group" ng-repeat="whatsit in awesomeWhatsit | filter:{user: getCurrentUser().email}">
+        <li class="list-group-item"><a href="/newpage/{{whatsit._id}}">{{whatsit.name}} - User: {{whatsit.user}} </a>
+    </li>
+      </ul>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
 

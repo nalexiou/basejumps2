@@ -1,8 +1,10 @@
 'use strict';
 
 angular.module('basejumps2App')
-  .controller('NewpageCtrl', function ($scope, $http, socket) {
+  .controller('NewpageCtrl', function ($scope, $http, socket, Auth) {
   	$scope.awesomeWhatsit = [];
+    $scope.getCurrentUser = Auth.getCurrentUser;
+     $scope.isLoggedIn = Auth.isLoggedIn;
   	   $http.get('/api/whatsits').success(function(awesomeWhatsit) {
       $scope.awesomeWhatsit = awesomeWhatsit;
       // $scope.labels = awesomeWhatsit[0].labels;
