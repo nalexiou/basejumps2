@@ -11,7 +11,7 @@ angular.module('basejumps2App')
         templateUrl: 'app/newpage/newpage.html',
         controller: 'NewpageCtrl'
       })
-      .when('/newpage/:id', {
+      .when('/newpage/:user/:id', {
         templateUrl: 'app/newpage/chart.html',
         controller: 'ChartCtrl'
       });
