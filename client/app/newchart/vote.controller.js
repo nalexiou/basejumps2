@@ -1,5 +1,5 @@
 angular.module('basejumps2App')
-  .controller('VoteCtrl', function ($scope, $http, socket, $routeParams) {
+  .controller('VoteCtrl', function ($scope, $http, socket, $routeParams, $location) {
   	$scope.awesomeChart = {};
     $scope.vote = {};
   	var chartid = $routeParams.id;
@@ -14,8 +14,8 @@ angular.module('basejumps2App')
       }
       $scope.awesomeChart.data[0][$scope.vote.selection] = $scope.awesomeChart.data[0][$scope.vote.selection]+1;
       $http.put('/api/whatsits/'+chartid, $scope.awesomeChart).success(function(awesomeChart){
-        $scope.awesomeChart = awesomeChart;
-      }
+        $location.path('/newpage/'+ awesomeChart.user + '/' +awesomeChart._id);
+      } 
       );
     }
 
