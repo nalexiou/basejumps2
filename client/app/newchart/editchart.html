@@ -1,0 +1,33 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div ng-show = "isLoggedIn()">
+<div class="container">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+      <h1 class="page-header">Edit chart:</h1>
+<p class="input-group">
+      <label>Chart name:</label>
+    <div>
+  	<input type="text" class="form-control" placeholder="Enter chart name" ng-model="awesomeChart.name">
+  </div>
+</p>
+<form name="myForm">
+      <label>Chart options:</label>
+    <p class="input-group" ng-repeat="someString in awesomeChart.labels track by $index">
+    <input type="text" class="form-control input" name="socialUrl" placeholder="Enter new label name" ng-model="awesomeChart.labels[$index]" required>
+    <span class="input-group-btn">
+    	<button class="btn btn-default" ng-click="deleteLabel($index)">&times;</button>
+    </span>
+	</p>
+</form>
+
+
+<p class="input-group center-block">
+  <button type="submit" class="btn btn-primary center-block" ng-click="addLabel()">More Options</button>
+  <button type="submit" class="btn btn-primary center-block" ng-click="saveChart()">Save Chart</button>
+</p>
+
+</div>
+<div class="col-md-4"></div>
+</div>
+</div>
+

@@ -8,9 +8,6 @@ angular.module('basejumps2App')
     $scope.isLoggedIn = Auth.isLoggedIn;
     var data = [[0,0,0]];
 
-  	$scope.displayLabels = function() {
-      alert($scope.labels.toString());
-    };
     $scope.addLabel = function(){
     	$scope.labels.push("");
       data[0].push(0);

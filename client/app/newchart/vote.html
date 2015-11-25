@@ -1,4 +1,5 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container">
 <div class="col-md-2"></div>
 <div class="col-md-8">
 <h2 class="page-header text-center">Chart: {{awesomeChart.name}}</h2>
@@ -7,8 +8,8 @@
 <div class="col-md-4">
 <div role="group" ng-repeat="item in awesomeChart.labels track by $index">
 	<div class="radio">
-	  <input ng-model="vote.selection" type="radio" ng-value="$index">
-	  <label>{{item}}</label>
+	  
+	  <label>{{item}}<input ng-model="vote.selection" type="radio" ng-value="$index"></label>
 	</div>
 </div>
 </div>
@@ -17,7 +18,9 @@
 <div class="row">
 <button type="submit" class="btn btn-primary center-block" ng-click="addVote()">Vote</button>
 </div>
+</div>
 <div class="col-md-2"></div>
+</div>
 
 <!-- <tt>awesomeChart = {{awesomeChart | json}}</tt><br/>
 <tt>vote = {{vote.selection | json}}</tt><br/> -->
