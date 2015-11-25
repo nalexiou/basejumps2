@@ -1,12 +1,20 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="col-md-2"></div>
 <div class="col-md-8">
-<h1 class="page-header">Chart: {{awesomeChart.name}}</h1>
-<div role="group" class="container" ng-repeat="item in awesomeChart.labels track by $index">
+<h2 class="page-header text-center">Chart: {{awesomeChart.name}}</h2>
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+<div role="group" ng-repeat="item in awesomeChart.labels track by $index">
 	<div class="radio">
-	  <label><input ng-model="vote.selection" type="radio" ng-value="$index">{{item}}</label>
+	  <input ng-model="vote.selection" type="radio" ng-value="$index">
+	  <label>{{item}}</label>
 	</div>
 </div>
+</div>
+<div class="col-md-4"></div>
+</div>
+<div class="row">
 <button type="submit" class="btn btn-primary center-block" ng-click="addVote()">Vote</button>
 </div>
 <div class="col-md-2"></div>

@@ -6,10 +6,28 @@
     <div class="col-md-8">
       <h1 class="page-header">Available Charts</h1>
       <ul class="col-md-4 col-lg-4 col-sm-6 list-group" ng-repeat="whatsit in awesomeWhatsit | filter:{user: getCurrentUser().email}">
-        <li class="list-group-item"><a href="/newpage/{{whatsit.user}}/{{whatsit._id}}">{{whatsit.name}} - User: {{whatsit.user}} </a>
+        <li class="list-group-item">
+<div class='wrapper text-center'>
+  <div>
+  <a href="/newpage/{{whatsit.user}}/{{whatsit._id}}">{{whatsit.name}}</a>
+</div>
+
+       <button class="btn btn-primary" ng-click="editChart(whatsit)">Edit</button>
+    <button class="btn btn-primary" ng-click="deleteChart(whatsit)">Delete</button>
+  </div>
+<!--         <div class='wrapper text-center'>
+          <div class="btn-group">
+              <button type="button" class="btn btn-primary" ng-click="editChart(whatsit)">Edit</button>
+          <button type="button" class="btn btn-primary" ng-click="editChart(whatsit)">Delete</button>
+          </div>
+    </div> -->
 		<span class="pull-right">
-        	<button type="button" class="close" ng-click="deleteChart(whatsit)">&times;</button>
+        	<!-- <button type="button" class="close" ng-click="deleteChart(whatsit)">&times;</button> -->
+
+
         </span>
+        
+
     </li>
       </ul>
     </div>
